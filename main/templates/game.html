@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World of Ruin</title>
+    <link rel="stylesheet" href="{% static 'css/game.css' %}">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">World of Ruin</h1>
+        <div class="game-layout">
+            <div class="left-panel">
+                <div class="location-info">
+                    <h2 id="sub_zone">{{ location.sub_zone }}</h2>
+                    <p id="description">{{ location.description }}</p>
+                    <p id="level">Level: {{ location.level }}</p>
+                    <p id="coords">Coordinates: (0, 0)</p>
+                    <p id="monsters">Monsters: {{ location.monsters|join:", " }}</p>
+                    {% if location.dungeon %}
+                        <h3 id="dungeon_name">Dungeon: {{ location.dungeon.name }}</h3>
+                        <p id="dungeon_description">{{ location.dungeon.description }}</p>
+                    {% else %}
+                        <h3 id="dungeon_name" style="display: none;"></h3>
+                        <p id="dungeon_description" style="display: none;"></p>
+                    {% endif %}
+                </div>
+                <div class="character-sheet">
+                    <h3>Character Summary</h3>
+                    <p id="char_level">Level: {{ character.level }}</p>
+                    <p id="char_xp">XP: {{ character.xp }} / {{ character.xp_to_next_level }}</p>
+                    <p id="char_class">Class: {{ character.class }}</p>
+                    <p id="char_hp">HP: {{ character.hp_remaining }} / {{ character.hp_total }}</p>
+                    <p id="char_strength">STR: {{ character.strength }}</p>
+                    <p id="char_dexterity">DEX: {{ character.dexterity }}</p>
+                    <p id="char_intelligence">INT: {{ character.intelligence }}</p>
+                    <button class="character-details-button">Character Details</button>
+                </div>
+            </div>
+            <div class="center-panel">
+                <div class="image-container">
+                    <img id="zone-image" src="{% static 'map/default.png' %}" alt="Zone Image">
+                </div>
+                <div class="movement-controls">
+                    <button id="move-up" class="up">Up</button>
+                    <button id="move-left" class="left">Left</button>
+                    <button id="move-right" class="right">Right</button>
+                    <button id="move-down" class="down">Down</button>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="mini-map">
+                    <h3>Mini Map</h3>
+                    <button id="toggle-zoom" class="toggle-zoom-button">Toggle Zoom</button>
+                    <div id="map-container"></div>
+                </div>
+                <div class="monster-info">
+                    <h3>Location Monster</h3>
+                    <p id="monster-type">Type: <span></span></p>
+                    <p id="monster-level">Level: <span></span></p>
+                    <button id="attack-button" class="attack-button">Attack</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-details-popup">
+        <h3>Character Details</h3>
+        <p id="popup_char_level"></p>
+        <p id="popup_char_xp"></p>
+        <p id="popup_char_strength"></p>
+        <p id="popup_char_dexterity"></p>
+        <p id="popup_char_intelligence"></p>
+        <button id="close-character-details">OK</button>
+    </div>
+
+    <script src="{% static 'js/game.js' %}"></script>
+</body>
+</html>

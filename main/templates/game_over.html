@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over - World of Ruin</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/game.css' %}">
+    <style>
+        .game-over-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .game-over-container h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .game-over-container p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .restart-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #CD7F32;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .restart-button:hover {
+            background-color: #E07C30;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">World of Ruin</h1>
+        <div class="game-over-container">
+            <h1>You almost died...</h1>
+            <p>You've ventured too far into dangerous territory and almost died.</p>
+            <p>But the universe has other plans for you... someone dragged your body back to the starting point.</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="restart-button">Revive</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="content">
+        <div class="title-container">
+            <h1 class="game-title">World of Ruin</h1>
+        </div>
+        <h2>Create a New Account</h2>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            <div class="password-field">
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                <div class="password-tooltip">
+                    <ul>
+                        <li>Your password can't be too similar to your other personal information.</li>
+                        <li>Your password must contain at least 8 characters.</li>
+                        <li>Your password can't be a commonly used password.</li>
+                        <li>Your password can't be entirely numeric.</li>
+                    </ul>
+                </div>
+            </div>
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+            <button type="submit">Register</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+</body>
+</html>

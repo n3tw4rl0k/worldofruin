@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Class - World of Ruin</title>
+    <link rel="stylesheet" href="{% static 'css/choose_class.css' %}">
+</head>
+<body>
+    <div class="content">
+        <h1 id="world-of-ruin" class="game-title">World of Ruin</h1>
+
+        <p class="destiny-text">Choose your destiny and write your fate</p>
+
+        <form id="classForm" method="POST" action="{% url 'choose_class' %}">
+            {% csrf_token %}
+            <input type="hidden" id="selected_class" name="class" value="">
+
+            <div class="class-selection">
+                <div class="class-circle" onclick="selectClass('ROGUE');">
+                    <span id="ROGUE" class="class-name">Rogue</span>
+                </div>
+
+                <div class="class-circle" onclick="selectClass('WARRIOR');">
+                    <span id="WARRIOR" class="class-name">Warrior</span>
+                </div>
+
+                <div class="class-circle" onclick="selectClass('MAGE');">
+                    <span id="MAGE" class="class-name">Mage</span>
+                </div>
+            </div>
+
+            <button id="confirmButton" type="button" disabled>Enter World</button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/choose_class.js' %}"></script>
+</body>
+</html>

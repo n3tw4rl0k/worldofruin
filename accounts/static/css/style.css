@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/static/fonts/Cinzel-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/static/fonts/Cinzel-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Cinzel', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+form {
+    width: 100%;
+    max-width: 360px;
+    background-color: #222;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #8A2F0B;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #FFF;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #CD7F32;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #8A2F0B;
+}
+
+button:hover {
+    background-color: #E07C30;
+}
+
+label {
+    color: #ccc;
+}
+
+a {
+    color: #CD7F32;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin: 0 0 20px;
+}
+
+.title-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.game-title {
+    font-size: 48px;
+    color: transparent;
+    background-image: linear-gradient(120deg, #FFD700, #FF6347, #FF4500, #DC143C);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Cinzel', sans-serif;
+    text-shadow: 0 0 8px rgba(220, 20, 60, 0.6);
+    animation: shimmer 15s infinite, pulse-aura 6s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { color: #FF8C00; }
+    50% { color: #FFC000; }
+}
+
+@keyframes pulse-aura {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.3),
+                     0 0 20px rgba(255, 140, 0, 0.3),
+                     0 0 30px rgba(255, 140, 0, 0.3),
+                     0 0 40px rgba(255, 140, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 165, 0, 0.7),
+                     0 0 30px rgba(255, 165, 0, 0.7),
+                     0 0 45px rgba(255, 165, 0, 0.7),
+                     0 0 60px rgba(255, 165, 0, 0.7);
+    }
+}
+
+
+.spark {
+    position: absolute;
+    bottom: 15px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+.fire-effect {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-52%);
+    top: 25px;
+}
+
+.fire-particle {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 165, 0, 0.9);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: riseFlame 3s linear infinite;
+    box-shadow: 0 0 8px 3px #FFA500; // Glow effect
+}
+
+@keyframes riseFlame {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-15px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes burn1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50px, -150px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes burn2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50px, -100px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes burn3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-30px, -120px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    top: 50%;
+    left: calc(100% + 20px);
+    transform: translateY(-50%);
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.password-field:hover .password-tooltip {
+    display: block;
+}
+
+.password-tooltip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #333 transparent transparent;
+}
+
+.password-tooltip ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.password-tooltip li {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.helptext {
+    display: none;
+}
+
+.content form p {
+    margin-bottom: 15px;
+}

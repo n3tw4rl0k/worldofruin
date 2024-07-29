@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}" type="image/png">
+    <link rel="icon" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <div class="content">
+        <div class="title-container">
+            <div class="game-title" id="gameTitle">World of Ruin</div>
+            <div class="fire-effect" id="fireEffect"></div>
+        </div>
+        <form method="post" action="{% url 'login' %}">
+            <h2>Login to Your Account</h2>
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </form>
+    </div>
+    <script src="{% static 'js/fire.js' %}"></script>
+</body>
+</html>

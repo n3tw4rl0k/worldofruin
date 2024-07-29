@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/static/fonts/Cinzel-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/static/fonts/Cinzel-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    color: #ff4500;
+    background-color: #000;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+header {
+    font-size: 48px;
+    color: transparent;
+    background-image: linear-gradient(120deg, #FFD700, #FF6347, #FF4500, #DC143C);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Cinzel', sans-serif;
+    text-shadow: 0 0 8px rgba(220, 20, 60, 0.6);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 85vh;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.image-container {
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.75);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.image-container img.active {
+    opacity: 1;
+}
+
+.terminal-container {
+    width: 100%;
+    position: relative;
+}
+
+.skip-button {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+    color: #ff4500;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ff4500;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #ff4500;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    text-decoration: none;
+}
+
+.skip-button:hover {
+    background-color: rgba(255, 69, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+}
+
+.terminal {
+    width: 100%;
+    height: 10vh;
+    max-height: 14vh;
+    margin-top: 14px;
+    padding: 10px;
+    overflow-y: hidden;
+    border: 1px solid #ff4500;
+    box-shadow: 0 0 15px 5px #ff4500;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    color: #ff4500;
+}
+
+.terminal * {
+    margin: 0;
+    line-height: normal;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.click-continue {
+    cursor: pointer;
+    color: #fff;
+    animation: blinker 1s linear infinite;
+    padding-top: 20px;
+    font-size: 20px;
+}

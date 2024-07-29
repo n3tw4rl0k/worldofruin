@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="{% static 'css/game_intro.css' %}">
+</head>
+<body>
+    <header>
+        World of Ruin
+    </header>
+    <div class="container">
+        <div class="image-container">
+            <img id="game-image" src="{% static 'map/intro_1.png' %}"
+                 data-images="{% static 'map/intro_1.png' %}, {% static 'map/intro_2.png' %}, {% static 'map/intro_3.png' %}"
+                 alt="Red Sands" class="active">
+        </div>
+        <div class="terminal-container">
+            <a href="#" id="skip-button" class="skip-button">>> SKIP INTRO</a>
+            <div class="terminal" id="terminal">
+                <!-- Text content will be dynamically filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/terminal.js' %}"></script>
+    <form id="intro-complete-form" action="{% url 'game_main' %}" method="post" style="display: none;">
+        {% csrf_token %}
+    </form>
+</body>
+</html>
