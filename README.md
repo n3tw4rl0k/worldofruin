@@ -151,6 +151,8 @@ login:
 class selection:
 ![class_selection](https://github.com/user-attachments/assets/5bc1be4b-4d8d-4cd2-9754-6d7957cf6d69)
 
+https://github.com/user-attachments/assets/1592ca15-36fa-4b74-8a38-26c007a71961
+
 exploration:
 ![screenshot_exploration](https://github.com/user-attachments/assets/82a92622-50e0-48fd-bd51-e0fbd9e4191d)
 
