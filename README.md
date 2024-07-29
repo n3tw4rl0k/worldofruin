@@ -148,6 +148,9 @@ If you continue to experience issues, please check the Django documentation on m
 login:
 ![screenshot_login](https://github.com/user-attachments/assets/3b1cdcc4-1da4-4302-b137-aa4471a44bd2)
 
+class selection:
+![class_selection](https://github.com/user-attachments/assets/5bc1be4b-4d8d-4cd2-9754-6d7957cf6d69)
+
 exploration:
 ![screenshot_exploration](https://github.com/user-attachments/assets/82a92622-50e0-48fd-bd51-e0fbd9e4191d)
 
