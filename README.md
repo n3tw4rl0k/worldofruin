@@ -4,6 +4,8 @@
 
 World of Ruin is a text-based, browser-based RPG set in a post-apocalyptic world. Players explore a vast, dangerous landscape filled with monsters, dungeons, and mysteries. The game combines elements of classic RPGs with modern web technologies to create an immersive and challenging experience.
 
+- created with help from Claude AI by Anthropic.
+
 ## Game Design
 
 ### Setting
